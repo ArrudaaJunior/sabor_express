@@ -1,6 +1,7 @@
 import os
 
 def exibir_nome_do_app():
+
     print("""
     ░██████╗░█████╗░██████╗░░█████╗░██████╗░  ███████╗██╗░░██╗██████╗░██████╗░███████╗░██████╗░██████╗
     ██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔══██╗  ██╔════╝╚██╗██╔╝██╔══██╗██╔══██╗██╔════╝██╔════╝██╔════╝
@@ -11,6 +12,7 @@ def exibir_nome_do_app():
     """)
 
 def exibir_opcoes():
+
     print('1. Cadastrar restaurante')
     print('2. Listar restaurante')
     print('3. Ativar restaurante')
@@ -21,23 +23,27 @@ def finalizar__app():
     print('App finalizado\n')
 
 def escolher_opcao():
+
     opcao_escolhida = int(input('Escolha uma opção: '))
     print(f'Você escolheu a opção {opcao_escolhida}')
 
-    if opcao_escolhida == 1:
-        print('Cadastrar restaurante')
-    elif opcao_escolhida == 2:
-        print('Listar restaurantes')
-    elif opcao_escolhida == 3:
-        print('Ativar restaurante')
-    else:
-        finalizar__app()
+    match opcao_escolhida:
+        case 1:
+            print('Cadastrar restaurante')
+        case 2:
+            print('Listar restaurantes')
+        case 3:
+            print('Ativar restaurante')
+        case 4:
+            finalizar__app()
 
 def main():
+
     exibir_nome_do_app()
     exibir_opcoes()
     escolher_opcao()
 
 if __name__ == '__main__':
+    
     main()
     
