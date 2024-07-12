@@ -1,6 +1,9 @@
 import os
 
-restaurantes = ['Pizza', 'Sushi']
+restaurantes = [{'nome':'Sushizeiro', 'categoria':'Japonesa', 'ativo':False},
+                {'nome':'Pizza Suprema', 'categoria':'Italiana', 'ativo':True},
+                {'nome':'Comida da Ana', 'categoria':'Nordestina', 'ativo':False}
+]
 
 def exibir_nome_do_app():
 
@@ -51,9 +54,12 @@ def cadastrar_novo_restaurante():
 def listar_restaurante():
 
     exibir_subtitulo('Lista dos restaurantes')
-
+    
     for restaurante in restaurantes:
-        print(f'.{restaurante}')
+        nome_restaurante = restaurante['nome']
+        categoria = restaurante['categoria']
+        ativo = restaurante['ativo']
+        print(f'- nome: {nome_restaurante} | categoria: {categoria} | ativo: {ativo}')
 
     voltar_ao_menu_principal()
 
